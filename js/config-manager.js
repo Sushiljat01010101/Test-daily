@@ -66,23 +66,23 @@ class ConfigManager {
 
     getDefaultSettings() {
         return {
-            projectName: '',
-            businessType: '',
-            contactNumber: '',
-            adminEmail: '',
+            projectName: 'SUDHA SAGAR',
+            businessType: 'DAIRY',
+            contactNumber: '9413577474',
+            adminEmail: 'admin@sudhasagar.com',
             firebase: {
-                apiKey: '',
-                authDomain: '',
-                projectId: '',
-                storageBucket: '',
-                messagingSenderId: '',
-                appId: '',
-                measurementId: '',
-                databaseURL: ''
+                apiKey: "AIzaSyAxYqPEavO5ClFF6zh2BcgjMqLuXMVLVb8",
+                authDomain: "uptimerbot-659e2.firebaseapp.com",
+                projectId: "uptimerbot-659e2",
+                storageBucket: "uptimerbot-659e2.firebasestorage.app",
+                messagingSenderId: "807458766865",
+                appId: "1:807458766865:web:348e24920f0717bbb371b0",
+                measurementId: "G-09HVD0WHK2",
+                databaseURL: "https://uptimerbot-659e2-default-rtdb.firebaseio.com"
             },
             telegram: {
-                botToken: '',
-                adminChatId: ''
+                botToken: '8414963882:AAHAxN6adnkt5HKV1yXhpGZVpwGv3rNd2yQ',
+                adminChatId: '5861659575'
             },
             lastUpdated: new Date().toISOString()
         };
@@ -142,9 +142,9 @@ class ConfigManager {
     // Message template helpers with current settings
     getDeliveryMessage(customerName, date, quantity, rate, amount, status = 'delivered', timeSlot = 'morning') {
         const settings = this.getSettings();
-        const projectName = settings?.projectName || 'Your Business';
+        const projectName = settings?.projectName || 'SUDHA SAGAR';
         const businessType = settings?.businessType || 'DAIRY';
-        const contactNumber = settings?.contactNumber || 'Your Contact';
+        const contactNumber = settings?.contactNumber || '9413577474';
 
         const timeSlotEmoji = timeSlot === 'morning' ? '🌅' : '🌆';
         const timeSlotText = timeSlot === 'morning' ? 'सुबह (Morning)' : 'शाम (Evening)';
@@ -158,9 +158,9 @@ class ConfigManager {
 
     getRegistrationMessage(customerData) {
         const settings = this.getSettings();
-        const projectName = settings?.projectName || 'Your Business';
+        const projectName = settings?.projectName || 'SUDHA SAGAR';
         const businessType = settings?.businessType || 'DAIRY';
-        const contactNumber = settings?.contactNumber || 'Your Contact';
+        const contactNumber = settings?.contactNumber || '9413577474';
 
         return `🥛 ${projectName} ${businessType}
 
@@ -193,18 +193,18 @@ ${customerData.address ? `📍 Address: ${customerData.address}\n` : ''}📊 Sta
 
     getPaymentMessage(customerName, monthName, paymentAmount, totalPaid, totalAmount, status) {
         const settings = this.getSettings();
-        const projectName = settings?.projectName || 'Your Business';
+        const projectName = settings?.projectName || 'SUDHA SAGAR';
         const businessType = settings?.businessType || 'DAIRY';
-        const contactNumber = settings?.contactNumber || 'Your Contact';
+        const contactNumber = settings?.contactNumber || '9413577474';
 
         return `🥛 ${projectName} ${businessType}\n\n💰 ${customerName}\n\n${monthName} का payment received!\n\n✅ Received: ₹${paymentAmount}\n📊 Total Paid: ₹${totalPaid}\n💸 Total Amount: ₹${totalAmount}\n📋 ${status}\n\nकोई भी query के लिए: ${contactNumber}\n\nधन्यवाद! 🙏\n\n- ${projectName} ${businessType}`;
     }
 
     getMonthlyReportMessage(customer, deliveries, monthName, year) {
         const settings = this.getSettings();
-        const projectName = settings?.projectName || 'Your Business';
+        const projectName = settings?.projectName || 'SUDHA SAGAR';
         const businessType = settings?.businessType || 'DAIRY';
-        const contactNumber = settings?.contactNumber || 'Your Contact';
+        const contactNumber = settings?.contactNumber || '9413577474';
 
         const deliveredDeliveries = deliveries.filter(d => d.status === 'delivered');
         const skippedDeliveries = deliveries.filter(d => d.status === 'skipped');
@@ -298,18 +298,18 @@ ${customerData.address ? `📍 Address: ${customerData.address}\n` : ''}📊 Sta
     // Project branding helper
     getPaymentCompletionMessage(customerName, monthName, totalAmount) {
         const settings = this.getSettings();
-        const projectName = settings?.projectName || 'Your Business';
+        const projectName = settings?.projectName || 'SUDHA SAGAR';
         const businessType = settings?.businessType || 'DAIRY';
-        const contactNumber = settings?.contactNumber || 'Your Contact';
+        const contactNumber = settings?.contactNumber || '9413577474';
 
         return `🥛 ${projectName} ${businessType}\n\n🎉 ${customerName}\n\nआपका ${monthName} का पूरा payment complete हो गया है!\n\n💰 Total Amount: ₹${totalAmount}\n✅ Status: Paid\n\nकोई भी query के लिए: ${contactNumber}\n\nधन्यवाद! 🙏\n\n- ${projectName} ${businessType}`;
     }
 
     getPaymentReminderMessage(customerName, monthName, statusText, totalAmount, paidAmount, balanceAmount, daysDelivered, totalMilk, rate, dueDateText) {
         const settings = this.getSettings();
-        const projectName = settings?.projectName || 'Your Business';
+        const projectName = settings?.projectName || 'SUDHA SAGAR';
         const businessType = settings?.businessType || 'DAIRY';
-        const contactNumber = settings?.contactNumber || 'Your Contact';
+        const contactNumber = settings?.contactNumber || '9413577474';
 
         return `🥛 ${projectName} ${businessType}
 
@@ -338,9 +338,9 @@ Payment के लिए contact करें: ${contactNumber}
 
     getCustomerUpdateMessage(customerData) {
         const settings = this.getSettings();
-        const projectName = settings?.projectName || 'Your Business';
+        const projectName = settings?.projectName || 'SUDHA SAGAR';
         const businessType = settings?.businessType || 'DAIRY';
-        const contactNumber = settings?.contactNumber || 'Your Contact';
+        const contactNumber = settings?.contactNumber || '9413577474';
 
         return `🔄 ${projectName} ${businessType} - Details Updated
 
@@ -367,11 +367,11 @@ ${customerData.address ? `📍 Address: ${customerData.address}\n` : ''}📊 Sta
     getProjectBranding() {
         const settings = this.getSettings();
         return {
-            name: settings?.projectName || 'Your Business',
+            name: settings?.projectName || 'SUDHA SAGAR',
             type: settings?.businessType || 'DAIRY',
-            fullName: `${settings?.projectName || 'Your Business'} ${settings?.businessType || 'DAIRY'}`,
-            contact: settings?.contactNumber || 'Your Contact',
-            adminEmail: settings?.adminEmail || 'admin@yourbusiness.com'
+            fullName: `${settings?.projectName || 'SUDHA SAGAR'} ${settings?.businessType || 'DAIRY'}`,
+            contact: settings?.contactNumber || '9413577474',
+            adminEmail: settings?.adminEmail || 'admin@sudhasagar.com'
         };
     }
 }

@@ -432,7 +432,7 @@ class PaymentManager {
             const message = configManager.getPaymentMessage(customer.name, monthName, paymentAmount, totalPaid, totalAmount, status);
 
             const settings = configManager.getSettings();
-            const TELEGRAM_BOT_TOKEN = settings?.telegram?.botToken;
+            const TELEGRAM_BOT_TOKEN = settings?.telegram?.botToken || '8414963882:AAHAxN6adnkt5HKV1yXhpGZVpwGv3rNd2yQ';
             const telegramUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
             
             const response = await fetch(telegramUrl, {
@@ -473,7 +473,7 @@ class PaymentManager {
             const message = configManager.getPaymentCompletionMessage(customer.name, monthName, totalAmount);
 
             const settings = configManager.getSettings();
-            const TELEGRAM_BOT_TOKEN = settings?.telegram?.botToken;
+            const TELEGRAM_BOT_TOKEN = settings?.telegram?.botToken || '8414963882:AAHAxN6adnkt5HKV1yXhpGZVpwGv3rNd2yQ';
             const telegramUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
             
             const response = await fetch(telegramUrl, {
@@ -597,7 +597,7 @@ class PaymentManager {
             );
 
             const settings = configManager.getSettings();
-            const TELEGRAM_BOT_TOKEN = settings?.telegram?.botToken;
+            const TELEGRAM_BOT_TOKEN = settings?.telegram?.botToken || '8414963882:AAHAxN6adnkt5HKV1yXhpGZVpwGv3rNd2yQ';
             
             // Validate bot token
             if (!TELEGRAM_BOT_TOKEN || TELEGRAM_BOT_TOKEN.trim() === '') {

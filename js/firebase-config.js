@@ -4,50 +4,25 @@ import { getAuth } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth
 import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 import { getFunctions } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-functions.js";
 
-// Dynamic Firebase configuration - will be loaded from settings
-function getFirebaseConfig() {
-    // Try to get settings from localStorage first
-    const stored = localStorage.getItem('app_settings');
-    if (stored) {
-        const settings = JSON.parse(stored);
-        if (settings.firebase && settings.firebase.apiKey) {
-            return settings.firebase;
-        }
-    }
-    
-    // Return empty config if no settings found
-    return {
-        apiKey: '',
-        authDomain: '',
-        databaseURL: '',
-        projectId: '',
-        storageBucket: '',
-        messagingSenderId: '',
-        appId: '',
-        measurementId: ''
-    };
-}
+// Firebase configuration
+const firebaseConfig = {
+    apiKey: "AIzaSyDL7AzbkoI8XXn9TfRwOg9K2T0M-K60p3I",
+    authDomain: "dairy-4aee1.firebaseapp.com",
+    databaseURL: "https://dairy-4aee1-default-rtdb.firebaseio.com",
+    projectId: "dairy-4aee1",
+    storageBucket: "dairy-4aee1.firebasestorage.app",
+    messagingSenderId: "952312422395",
+    appId: "1:952312422395:web:909f176fc2b4530008355e",
+    measurementId: "G-J6L08JDM5M"
+};
 
-// Get Firebase configuration
-const firebaseConfig = getFirebaseConfig();
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
 
-// Initialize Firebase only if config is available
-let app, auth, db, functions;
+// Initialize Firebase services
+export const auth = getAuth(app);
+export const db = getFirestore(app);
+export const functions = getFunctions(app);
 
-if (firebaseConfig.apiKey && firebaseConfig.projectId) {
-    try {
-        app = initializeApp(firebaseConfig);
-        auth = getAuth(app);
-        db = getFirestore(app);
-        functions = getFunctions(app);
-        console.log('Firebase initialized successfully');
-    } catch (error) {
-        console.error('Error initializing Firebase:', error);
-    }
-} else {
-    console.warn('Firebase configuration not found. Please configure Firebase settings.');
-}
-
-// Export Firebase services
-export { auth, db, functions };
+// Export the app for other modules
 export default app;
