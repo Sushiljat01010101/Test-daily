@@ -6,14 +6,14 @@ import { getFunctions } from "https://www.gstatic.com/firebasejs/10.7.1/firebase
 
 // Firebase configuration
 const firebaseConfig = {
-    apiKey",
-    authDomain: "uptimerbot-659e2.firebaseapp.com",
-    databaseURL: "https://uptimerbot-659e2-default-rtdb.firebaseio.com",
-    projectId: "uptimerbot-659e2",
-    storageBucket: "uptimerbot-659e2.firebasestorage.app",
-    messagingSenderId: "807458766865",
-    appId: "1:807458766865:web:348e24920f0717bbb371b0",
-    measurementId: "G-09HVD0WHK2"
+                apiKey: "AIzaSyDL7AzbkoI8XXn9TfRwOg9K2T0M-K60p3I",
+                authDomain: "dairy-4aee1.firebaseapp.com",
+                projectId: "dairy-4aee1",
+                storageBucket: "dairy-4aee1.firebasestorage.app",
+                messagingSenderId: "952312422395",
+                appId: "1:952312422395:web:909f176fc2b4530008355e",
+                measurementId: "G-J6L08JDM5M",
+                databaseURL: "https://dairy-4aee1-default-rtdb.firebaseio.com"
 };
 
 // Initialize Firebase
