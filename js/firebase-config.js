@@ -6,7 +6,7 @@ import { getFunctions } from "https://www.gstatic.com/firebasejs/10.7.1/firebase
 
 // Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyAxYqPEavO5ClFF6zh2BcgjMqLuXMVLVb8",
+    apiKey",
     authDomain: "uptimerbot-659e2.firebaseapp.com",
     databaseURL: "https://uptimerbot-659e2-default-rtdb.firebaseio.com",
     projectId: "uptimerbot-659e2",
